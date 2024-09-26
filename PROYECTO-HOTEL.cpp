@@ -98,7 +98,7 @@ int menuhab();
 int menuReserva();
 int menu_hab_bar();
 int menuBar();
-void logo1();
+//void logo1();
 void operaciones(int op,int dia, int mes,int x,int y,int anio, int hora, int min,Persona *&pcabPer,Persona *&pfinPer,CabFactura *&pcabFactu,CabFactura *&pfinFactu,Bar *&pcabBar,Bar	*&pfinBar,Bar *&pcabReg,Bar *&pfinReg,Habitacion *&pcabHab, Habitacion *&pfinHab);
 
 void Registro_Habitaciones(Habitacion *&pcabHab, Habitacion *&pfinHab );
@@ -143,13 +143,13 @@ void Mostrar_factura(CabFactura *aux,Persona *pcabPer,Habitacion *&pcabHab);
 CabFactura *buscardetafact_codigo(string cedula,CabFactura *pcabFactu);
 void Mostrar_factura_codigo(CabFactura *aux,Persona *pcabPer,Habitacion *&pcabHab);
 
-void marco();
-void reloj();
-void logo();
-void chao();
+//void marco();
+//void reloj();
+//void logo();
+//void chao();
 void limpiado_de_pantalla();
 void limpiado_de_lineas(int f, int g);
-void bor();
+//void bor();
 
 int main(){
 	
@@ -162,7 +162,7 @@ int main(){
 /**/			int hora   = now->tm_hour;									//	
 /**/  			int min   = now->tm_min;									//
 
-	marco(); reloj(); //system("color 07");
+	//marco(); reloj(); //system("color 07");
 	//punteros para el producto
 	Bar *pcabBar=NULL;
 	Bar *pfinBar=NULL;
@@ -210,7 +210,7 @@ int main(){
 	}while(respuesta==1);
 	limpiado_de_lineas(f,g);
 	system("cls");
-	chao();
+	//chao();
 	return 0;
 }
 
@@ -311,7 +311,7 @@ void operaciones(int op,int dia,int mes,int x,int y,int anio,int hora,int min,Pe
 			switch(respuesta){
 				case 1:
 					returno:
-					marco(); reloj(); 
+					//marco(); reloj(); 
 					gotoxy(30,10);printf("        Usuario:  ADMINISTRADOR        ");
 					respuesta=menuHabitacion();
 					switch(respuesta){
@@ -345,7 +345,7 @@ void operaciones(int op,int dia,int mes,int x,int y,int anio,int hora,int min,Pe
 				break;
 				case 2:
 					retu:
-					marco(); reloj(); 
+					//marco(); reloj(); 
 					gotoxy(30,10);printf("        Usuario:  ADMINISTRADOR         ");
 					respuesta=menuBar();
 					switch(respuesta){
@@ -420,7 +420,7 @@ void operaciones(int op,int dia,int mes,int x,int y,int anio,int hora,int min,Pe
 		break;
 		case 4: 
 			system("cls");
-			logo();
+			//logo();
 			gotoxy(30,10);cout<<"CODIGO DE LA FACTURA: ";
 			cin>>cedula;
 			
@@ -454,7 +454,7 @@ void Registro_Habitaciones(Habitacion *&pcabHab, Habitacion *&pfinHab ){
 		gotoxy(4,15);cout<<"Numero:                      ";gotoxy(12,15);cin>>codigo;//RESPUESTA 
 		nuevaHabitacion=fun_buscarHabitacion_por_tipo(codigo,pcabHab,respuesta);
 		if(nuevaHabitacion!=NULL){
-			logo1();
+			//logo1();
 			MostrarHab_por_codigo(pcabHab,codigo,y,x); 
 			gotoxy(4,34);cout<<"HABITACION CON ESE CODIGO YA ESTA REGISTRADA";
 		}else{
@@ -514,7 +514,7 @@ void ModificarHabitaciones(Habitacion *pcabHab,Habitacion *pfinHab){
 	float tasa;
 	float iva;
 	string codigo,numero;
-	bor();
+	//bor();
 	limpiado_de_pantalla();
 	gotoxy(6,13);cout<<"MODIFICAR DATOS DE HABITACION ";
 	gotoxy(4,15);cout<<"Numero:                      ";gotoxy(12,15);cin>>codigo;
@@ -597,7 +597,7 @@ void fun_eliminarHabitacion(Habitacion *&pcabHab,Habitacion *&pfinHab){
 	Habitacion *direccion=NULL;
 	Habitacion *dirEliminar=NULL;
 	string codigo;
-	bor();
+	//bor();
 	limpiado_de_pantalla();
 	gotoxy(4,15);cout<<"Ingrese el numero de la habitacion a eliminar: ";cin>>codigo;
 	direccion=fun_buscarHabitacion(codigo,pcabHab);
@@ -672,7 +672,7 @@ void fun_eliminarProducto(Bar *&pcabBar, Bar *pfinBar){
 	Bar *direccion=NULL;
 	Bar *dirEliminar=NULL;
 	string codigo;
-	bor();
+	//bor();
 	limpiado_de_pantalla();
 	gotoxy(6,13);cout<<"ELIMINAR PRODUCTO";
 	gotoxy(4,15);cout<<"Ingrese el codigo del producto a eliminar:      ";gotoxy(48,15);cin>>codigo;
@@ -816,7 +816,7 @@ void Reservacion(int dia, int mes, int anio, int hora, int min,Persona *&pcabPer
 			}
 			getch();
 			system("cls");
-			marco(); reloj();
+			//marco(); reloj();
 			gotoxy(38,10);printf("Usuario:  RECEPCIONISTA");	
 			gotoxy(4,30);cout<<"Realizar otra reservacion Si(1): ";
 			gotoxy(38,30);cin>>resp;
@@ -847,7 +847,7 @@ void fun_registrarPersona(string cedula,int dia, int mes, int anio, int hora, in
 		gotoxy(4,17);cout<<"Digite la fecha de entrada al hotel (dd/mm/aa): ";
 		gotoxy(4,19);cout<<"Dia: ";cin>>nuevaPersona->dia1;
 		gotoxy(14,19);cout<<"Mes: ";cin>>nuevaPersona->mes1;
-		gotoxy(24,19);cout<<"Año: ";cin>>nuevaPersona->anio1;
+		gotoxy(24,19);cout<<"Aï¿½o: ";cin>>nuevaPersona->anio1;
 		if(nuevaPersona->dia1<dia && nuevaPersona->mes1<mes && nuevaPersona->anio1<anio){
 			gotoxy(4,35);cout<<"Fecha incorrecta ingrese denuevo";
 			getch();
@@ -861,7 +861,7 @@ void fun_registrarPersona(string cedula,int dia, int mes, int anio, int hora, in
 		gotoxy(4,23);cout<<"Digite la fecha de salida del hotel (dd/mm/aa): "<<endl;
 		gotoxy(4,25);cout<<"Dia: ";cin>>nuevaPersona->dia2;
 		gotoxy(14,25);cout<<"Mes: ";cin>>nuevaPersona->mes2;
-		gotoxy(24,25);cout<<"Año: ";cin>>nuevaPersona->anio2;	
+		gotoxy(24,25);cout<<"Aï¿½o: ";cin>>nuevaPersona->anio2;	
 		if(nuevaPersona->dia2<dia && nuevaPersona->mes2<mes && nuevaPersona->anio2<anio){
 			gotoxy(4,35);cout<<"Fecha incorrecta ingrese denuevo";
 			getch();
@@ -1301,7 +1301,7 @@ void Confirmar_reservacion(Persona *&pcabPer,Persona *&pfinPer,Habitacion *&pcab
 							nuevaPersona->band=1;
 							dirHabitacion->estado=3;
 							
-							std::time_t t = std::time(0);   // get time now	
+							std::time_t t = std::time(0);   
    							std::tm* now = std::localtime(&t);
    							int anio=(now->tm_year + 1900);
    							int mes=(now->tm_mon + 1);
@@ -1368,8 +1368,8 @@ void Pagar_reservacion(Persona *&pcabPer,Persona *&pfinPer,CabFactura *&pcabFact
 	limpiado_de_pantalla();
 	if(pcabPer!=NULL){
 		system("cls");
-		marco();
-		logo();
+		//marco();
+		//logo();
 		gotoxy(4,30);cout<<"                                       ";
 		gotoxy(6,13);cout<<"        PAGAR RESERVACIONES       ";
 		gotoxy(4,15);cout<<"INGRESO DE DATOS PARA PAGAR RESERVACION";
@@ -1377,8 +1377,8 @@ void Pagar_reservacion(Persona *&pcabPer,Persona *&pfinPer,CabFactura *&pcabFact
 			int op;
 			string numerohabitacion;
 			system("cls");
-			marco();
-			logo();
+			//marco();
+			//logo();
 			gotoxy(4,30);cout<<"                                       ";
 			gotoxy(4,17);cout<<"DATOS DEL HUESPED";
 			gotoxy(4,19);cout<<"CEDULA: ";cin>>cedula;
@@ -1388,15 +1388,15 @@ void Pagar_reservacion(Persona *&pcabPer,Persona *&pfinPer,CabFactura *&pcabFact
 					numerohabitacion=nuevaPersona->numero_de_la_habitacion;
 					gotoxy(4,30);cout<<"DESEA REALIZAR LA FACTURACION SI(1)  NO(0): ";cin>>resp;
 					system("cls");
-					marco();
-					logo();
+					//marco();
+					//logo();
 					if(resp==1){
 						
 						gotoxy(30,10);cout<<"DATOS PARA LA FACTURA";
 						gotoxy(4,15);cout<<"CODIGO: ";cin>>codfact;
 						gotoxy(4,17);cout<<"FECHA DE FACTURACION: ";
 						
-						std::time_t t = std::time(0);   // get time now	
+						std::time_t t = std::time(0);   
    						std::tm* now = std::localtime(&t);
    						int anio=(now->tm_year + 1900);
    						int mes=(now->tm_mon + 1);
@@ -1432,7 +1432,7 @@ void Mostrar_factura_codigo(CabFactura *aux,Persona *pcabPer,Habitacion *&pcabHa
 	float valor,total;
 	int resp;
 	//marco();
-	logo();
+	//logo();
 	gotoxy(4,13);cout<<"FACTURA: ";
 	gotoxy(4,14);cout<<"CODIGO: "<<aux->codfact;
 	Persona *actualPersona=NULL;
@@ -1486,8 +1486,8 @@ void Mostrar_factura(CabFactura *aux,Persona *pcabPer,Habitacion *&pcabHab){
 	Habitacion *actualHabitacion=NULL;
 	actualHabitacion=fun_buscarHabitacion(codigo,pcabHab);
 	system("cls");
-	logo();
-	marco();
+	//logo();
+	//marco();
 	
     gotoxy(40,13);cout<<"DETALLE DE HABITACION";
 	gotoxy(40,14);cout<<"NUMERO DE HABITACION: "<<actualHabitacion->codigo;
@@ -1571,6 +1571,7 @@ void limpiado_de_lineas(int f, int g)
 		gotoxy(f,g);printf(" ");
 	}
 }
+/*
 void chao(){
 	int i,j;
 	for(j=1;j<=32;j++)
@@ -1606,7 +1607,7 @@ void chao(){
 {
 	time_t now = time(0); // fecha/hora actual basado en el sistema actual
 	tm * time = localtime(&now); // Objeto de una estructura tm
-	//Formato=dia/mes/año     el mes comienza en 0 por eso se suma +1  y y el año se le suma 1900 sino saldria 118
+	//Formato=dia/mes/aï¿½o     el mes comienza en 0 por eso se suma +1  y y el aï¿½o se le suma 1900 sino saldria 118
 	gotoxy(4,6);printf("%d/ %d/ %d", time->tm_mday, (1+time->tm_mon), (1900+time->tm_year));
 	gotoxy(4,7);printf("%d: %d: %d ", time->tm_hour, time->tm_min, time->tm_sec);
 }
@@ -1655,11 +1656,11 @@ void marco(){
 
 void logo(){
 	gotoxy(5,3);printf("HOLTEL:");
-	gotoxy(22,2);printf("°°°°° °  °    °°°   °°°°  °°°° °°°°  °°  °   ° °°°° °°°°");
-	gotoxy(22,3);printf("  °   °  °    °  °  °     °    °    °  ° °°  ° °    °  ° ");
-	gotoxy(22,4);printf("  °   °  °    °   ° °°°°  °°°° °    °°°° ° ° ° °°°° °  ° ");
-	gotoxy(22,5);printf("  °   °  °    °  °  °        ° °    °  ° °  °°    ° °  ° ");
-	gotoxy(22,6);printf("  °   °°°°    °°°   °°°°  °°°° °°°° °  ° °   ° °°°° °°°°");
+	gotoxy(22,2);printf("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½  ï¿½    ï¿½ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½  ï¿½   ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+	gotoxy(22,3);printf("  ï¿½   ï¿½  ï¿½    ï¿½  ï¿½  ï¿½     ï¿½    ï¿½    ï¿½  ï¿½ ï¿½ï¿½  ï¿½ ï¿½    ï¿½  ï¿½ ");
+	gotoxy(22,4);printf("  ï¿½   ï¿½  ï¿½    ï¿½   ï¿½ ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½ ï¿½    ï¿½ï¿½ï¿½ï¿½ ï¿½ ï¿½ ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½  ï¿½ ");
+	gotoxy(22,5);printf("  ï¿½   ï¿½  ï¿½    ï¿½  ï¿½  ï¿½        ï¿½ ï¿½    ï¿½  ï¿½ ï¿½  ï¿½ï¿½    ï¿½ ï¿½  ï¿½ ");
+	gotoxy(22,6);printf("  ï¿½   ï¿½ï¿½ï¿½ï¿½    ï¿½ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½  ï¿½ ï¿½   ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 }
 
 void logo1(){
@@ -1675,3 +1676,4 @@ void bor(){
 	gotoxy(4,16);cout<<"                             ";
 	gotoxy(4,17);cout<<"                             ";
 }
+*/

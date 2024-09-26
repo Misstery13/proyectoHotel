@@ -1,4 +1,5 @@
-// 1. Zona para las librerías 
+// 1. Zona para las librerï¿½as 
+//Diana Melena 
 #include<iostream>
 #include<string.h>
 #include<conio.h>
@@ -22,7 +23,7 @@ struct Habitacion {
     string descripcion;
     float precioBase;
     bool vistaAlMar;
-    int camas;  // Solo para habitaciones múltiples
+    int camas;  // Solo para habitaciones mï¿½ltiples
     Habitacion* sgt;
     Habitacion* ant;
 };
@@ -70,18 +71,18 @@ int main() {
     return 0;
 }
 
-// 5. Implementación de funciones
+// 5. Implementaciï¿½n de funciones
 
 int menu() {
     int op;
     do {
-        cout << "***** GESTIÓN DE HOTEL *****" << endl; 
-        cout << "1: Ingresar Habitación" << endl;
-        cout << "2: Modificar Habitación" << endl;
-        cout << "3: Eliminar Habitación" << endl;
+        cout << "***** GESTIï¿½N DE HOTEL *****" << endl; 
+        cout << "1: Ingresar Habitaciï¿½n" << endl;
+        cout << "2: Modificar Habitaciï¿½n" << endl;
+        cout << "3: Eliminar Habitaciï¿½n" << endl;
         cout << "4: Visualizar Habitaciones" << endl;
-        cout << "5: Reservar Habitación" << endl;
-        cout << "Elija una operación" << endl;
+        cout << "5: Reservar Habitaciï¿½n" << endl;
+        cout << "Elija una operaciï¿½n" << endl;
         cin >> op;
     } while (op < 1 || op > 5);
     return op;
@@ -105,35 +106,35 @@ void fun_operaciones(int op, Habitacion *&pcabHabit, Habitacion *&pfinHabit, Cli
             fun_reservarHabitacion(pcabHabit, pcabRes, pfinRes, pcabCli);
             break;
         default:
-            cout << "Opción no válida " << endl;
+            cout << "Opciï¿½n no vï¿½lida " << endl;
     }
 }
 
-// Función para ingresar habitación
+// Funciï¿½n para ingresar habitaciï¿½n
 void fun_ingresarHabitacion(Habitacion *&pcab, Habitacion *&pfin) {
     Habitacion *nueva = new Habitacion();
     int multiple;
-    cout << "Ingrese el número de habitación: ";
+    cout << "Ingrese el nï¿½mero de habitaciï¿½n: ";
     cin >> nueva->numero;
     cin.ignore();
     
-    cout << "Ingrese la descripción de la habitación: ";
+    cout << "Ingrese la descripciï¿½n de la habitaciï¿½n: ";
     getline(cin, nueva->descripcion);
     
     cout << "Ingrese el precio base: ";
     cin >> nueva->precioBase;
     
-    cout << "¿Tiene vista al mar? (1: Sí, 0: No): ";
+    cout << "ï¿½Tiene vista al mar? (1: Sï¿½, 0: No): ";
     cin >> nueva->vistaAlMar;
     
-    cout << "¿Es una habitación múltiple? (1: Sí, 0: No): ";
+    cout << "ï¿½Es una habitaciï¿½n mï¿½ltiple? (1: Sï¿½, 0: No): ";
     cin >> multiple;
     
     if (multiple == 1) {
         cout << "Ingrese la cantidad de camas: ";
         cin >> nueva->camas;
     } else {
-        nueva->camas = 1;  // Si no es múltiple, solo 1 cama.
+        nueva->camas = 1;  // Si no es mï¿½ltiple, solo 1 cama.
     }
     
     nueva->sgt = NULL;
@@ -148,46 +149,46 @@ void fun_ingresarHabitacion(Habitacion *&pcab, Habitacion *&pfin) {
     }
 }
 
-// Función para modificar una habitación
+// Funciï¿½n para modificar una habitaciï¿½n
 void fun_modificarHabitacion(Habitacion *&pcab) {
     int numero;
-    cout << "Ingrese el número de la habitación a modificar: ";
+    cout << "Ingrese el nï¿½mero de la habitaciï¿½n a modificar: ";
     cin >> numero;
 
     Habitacion *actual = pcab;
     while (actual != NULL) {
         if (actual->numero == numero) {
-            cout << "Ingrese la nueva descripción: ";
+            cout << "Ingrese la nueva descripciï¿½n: ";
             cin.ignore();
             getline(cin, actual->descripcion);
 
             cout << "Ingrese el nuevo precio base: ";
             cin >> actual->precioBase;
 
-            cout << "¿Tiene vista al mar? (1: Sí, 0: No): ";
+            cout << "ï¿½Tiene vista al mar? (1: Sï¿½, 0: No): ";
             cin >> actual->vistaAlMar;
 
-            cout << "¿Es una habitación múltiple? (1: Sí, 0: No): ";
+            cout << "ï¿½Es una habitaciï¿½n mï¿½ltiple? (1: Sï¿½, 0: No): ";
             int multiple;
             cin >> multiple;
             if (multiple == 1) {
                 cout << "Ingrese la cantidad de camas: ";
                 cin >> actual->camas;
             } else {
-                actual->camas = 1;  // Si no es múltiple, solo 1 cama.
+                actual->camas = 1;  // Si no es mï¿½ltiple, solo 1 cama.
             }
-            cout << "Habitación modificada exitosamente." << endl;
+            cout << "Habitaciï¿½n modificada exitosamente." << endl;
             return;
         }
         actual = actual->sgt;
     }
-    cout << "Habitación no encontrada." << endl;
+    cout << "Habitaciï¿½n no encontrada." << endl;
 }
 
-// Función para eliminar una habitación
+// Funciï¿½n para eliminar una habitaciï¿½n
 void fun_eliminarHabitacion(Habitacion *&pcab, Habitacion *&pfin) {
     int numero;
-    cout << "Ingrese el número de la habitación a eliminar: ";
+    cout << "Ingrese el nï¿½mero de la habitaciï¿½n a eliminar: ";
     cin >> numero;
 
     Habitacion *actual = pcab;
@@ -195,12 +196,12 @@ void fun_eliminarHabitacion(Habitacion *&pcab, Habitacion *&pfin) {
 
     while (actual != NULL) {
         if (actual->numero == numero) {
-            if (anterior == NULL) {  // Es la primera habitación
+            if (anterior == NULL) {  // Es la primera habitaciï¿½n
                 pcab = actual->sgt;
                 if (pcab != NULL) {
                     pcab->ant = NULL;
                 } else {
-                    pfin = NULL;  // Lista vacía
+                    pfin = NULL;  // Lista vacï¿½a
                 }
             } else {
                 anterior->sgt = actual->sgt;
@@ -211,29 +212,29 @@ void fun_eliminarHabitacion(Habitacion *&pcab, Habitacion *&pfin) {
                 }
             }
             delete actual;
-            cout << "Habitación eliminada exitosamente." << endl;
+            cout << "Habitaciï¿½n eliminada exitosamente." << endl;
             return;
         }
         anterior = actual;
         actual = actual->sgt;
     }
-    cout << "Habitación no encontrada." << endl;
+    cout << "Habitaciï¿½n no encontrada." << endl;
 }
 
-// Función para visualizar habitaciones
+// Funciï¿½n para visualizar habitaciones
 void fun_visualizarHabitaciones(Habitacion *pcab) {
     Habitacion *actual = pcab;
     while (actual != NULL) {
-        cout << "\nNúmero: " << actual->numero;
-        cout << "\nDescripción: " << actual->descripcion;
+        cout << "\nNï¿½mero: " << actual->numero;
+        cout << "\nDescripciï¿½n: " << actual->descripcion;
         cout << "\nPrecio base: " << actual->precioBase;
-        cout << "\nVista al mar: " << (actual->vistaAlMar ? "Sí" : "No");
+        cout << "\nVista al mar: " << (actual->vistaAlMar ? "Sï¿½" : "No");
         cout << "\nCamas: " << actual->camas << endl;
         actual = actual->sgt;
     }
 }
 
-// Función para calcular el precio total
+// Funciï¿½n para calcular el precio total
 float calcularPrecioTotal(Habitacion *hab, string temporada, int dias) {
     float tasaTemporada;
     
@@ -252,12 +253,12 @@ float calcularPrecioTotal(Habitacion *hab, string temporada, int dias) {
     return precio + tasa + iva;
 }
 
-// Función para realizar una reservación
+// Funciï¿½n para realizar una reservaciï¿½n
 void fun_reservarHabitacion(Habitacion *pcab, Reservacion *&pcabRes, Reservacion *&pfinRes, Cliente *pcabCli) {
     int numeroHabitacion, dias;
     string temporada;
     
-    cout << "Ingrese el número de la habitación que desea reservar: ";
+    cout << "Ingrese el nï¿½mero de la habitaciï¿½n que desea reservar: ";
     cin >> numeroHabitacion;
 
     Habitacion *habitacionSeleccionada = pcab;
@@ -269,7 +270,7 @@ void fun_reservarHabitacion(Habitacion *pcab, Reservacion *&pcabRes, Reservacion
     }
 
     if (habitacionSeleccionada == NULL) {
-        cout << "Habitación no encontrada." << endl;
+        cout << "Habitaciï¿½n no encontrada." << endl;
         return;
     }
 
@@ -287,10 +288,10 @@ void fun_reservarHabitacion(Habitacion *pcab, Reservacion *&pcabRes, Reservacion
     cout << "Ingrese el nombre del cliente: ";
     getline(cin, nuevaRes->cliente.nombre);
     
-    cout << "Ingrese la cédula/RUC del cliente: ";
+    cout << "Ingrese la cï¿½dula/RUC del cliente: ";
     getline(cin, nuevaRes->cliente.cedula);
     
-    cout << "Ingrese el teléfono del cliente: ";
+    cout << "Ingrese el telï¿½fono del cliente: ";
     getline(cin, nuevaRes->cliente.telefono);
     
     cout << "Ingrese el email del cliente: ";
@@ -299,7 +300,7 @@ void fun_reservarHabitacion(Habitacion *pcab, Reservacion *&pcabRes, Reservacion
     cout << "Ingrese el tipo de temporada (alta, media, baja): ";
     getline(cin, temporada);
 
-    cout << "Ingrese la cantidad de días de estadía: ";
+    cout << "Ingrese la cantidad de dï¿½as de estadï¿½a: ";
     cin >> dias;
     
     nuevaRes->precioTotal = calcularPrecioTotal(habitacionSeleccionada, temporada, dias);
@@ -315,5 +316,5 @@ void fun_reservarHabitacion(Habitacion *pcab, Reservacion *&pcabRes, Reservacion
         pfinRes = nuevaRes;
     }
 
-    cout << "Reservación realizada exitosamente. Precio total: $" << nuevaRes->precioTotal << endl;
+    cout << "Reservaciï¿½n realizada exitosamente. Precio total: $" << nuevaRes->precioTotal << endl;
 }
